@@ -21,3 +21,10 @@ class Post(models.Model):   # Capital P (best practice)
     )
     content = models.TextField(blank=True)
     status = models.CharField(max_length=10, choices=options, default='draft')
+    
+    class meta:
+        ordering = ('publish')
+        
+        
+    def __str__(self):
+        return self.title
